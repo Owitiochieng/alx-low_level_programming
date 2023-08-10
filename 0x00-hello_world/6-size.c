@@ -1,6 +1,6 @@
 #include <stdio.>
 /**
- * Main - A program that prints different size types
+ * main - A program that prints different size types
  * Return: 0
  */
 int main(void)
