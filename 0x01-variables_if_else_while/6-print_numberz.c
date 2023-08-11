@@ -6,11 +6,15 @@
 
 int main(void)
 {
-	int i;
+	int w;
 
-	for (i = '0' ; i <= '9' ; i++)
-		putchar("%c", i);
+	w = 0;
+	while (w < 10)
+	{
+		putchar(w + '0');
+		w++;
+	}
 
-	putchar("\n");
+	putchar('\n');
 	return (0);
 }
