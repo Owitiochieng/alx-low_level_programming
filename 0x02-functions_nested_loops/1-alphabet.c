@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
+ * print_alphabet - Prints the alphabets
  * main - check the code
  *
- * Return: Always 0.
+ * Return: 0
  */
 
-void print_alphabet(void);
-
+void print_alphabet(void)
 {
 	char letter;
 
-	while (letter = 'a'; letter <= 'z', letter++)
+	for (letter = 'a'; letter <= 'z'; letter++)
 		_putchar(letter);
+
 	_putchar('\n');
-	return (0);
 }
