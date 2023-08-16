@@ -6,13 +6,9 @@
  */
 int _abs(int g)
 {
-	if (g < 0)
+	if (g >= 0)
 	{
-		int absolute_value;
-		
-		absolute_value = g * -1;
-		return (absolute_value);
+		return (g);
 	}
-	return (g);
+	return (-g);
 }
-
