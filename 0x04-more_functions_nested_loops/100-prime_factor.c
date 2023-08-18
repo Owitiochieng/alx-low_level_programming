@@ -9,21 +9,13 @@
 
 int main(void)
 {
-	long n = 612852475143;
-	long divi_sor;
+	unsigned long int g, num = 612852475143;
 
-	while (n % 2 == 0)
+	for (g = 3; g < 782849; g = g + 2)
 	{
-		n /= 2;
+		while ((num % g == 0) && (num != 1))
+			num = num / g;
 	}
-
-	for (divi_sor = 3; divi_sor <= n; divi_sor += 2)
-	{
-		while (n % divi_sor == 0)
-		{
-			n /= divi_sor;
-		}
-	}
-	printf("%ld\n", n);
+	printf("%lu\n", num);
 	return (0);
 }
