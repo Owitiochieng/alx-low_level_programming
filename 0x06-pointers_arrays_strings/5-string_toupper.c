@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * string_toupper - changes all lowercase letters of a string to uppercase
- * @n: String
+ * @n: Pointer
  * Return: n
  */
 
@@ -12,7 +12,7 @@ char *string_toupper(char *n)
 	while (n[g] != '\0')
 	{
 		if (n[g] >= 'a' && n[g] <= 'z')
-			n[g] = n[g] - n[g] - 32;
+			n[g] = n[g] - 32;
 		g++;
 	}
 	return (n);
