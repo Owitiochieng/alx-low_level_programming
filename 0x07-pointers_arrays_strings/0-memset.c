@@ -4,7 +4,7 @@
  * @s: Location of the memory for filling
  * @b: The value
  * @n: The number of bytes for change
- * Return: s
+ * Return: Pointer to s
  */
 
 char *_memset(char *s, char b, unsigned int n)
