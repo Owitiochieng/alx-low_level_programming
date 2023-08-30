@@ -13,7 +13,7 @@ int _sqrt_recursion(int n)
 	{
 		return (-1);
 	}
-	return (_sqrt_recursion(n, 0));
+	return (actual_sqrt_recursion(n, 0));
 }
 
 /**
