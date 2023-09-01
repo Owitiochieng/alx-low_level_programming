@@ -9,14 +9,7 @@
 int main(int argcount_, char *arg_values[])
 {
 	(void) arg_values; /*Ignore arg_values*/
-
-	if (argcount_ == 1)
-	{
-		printf("No arguments were passed.\n");
-	}
-	else
-	{
-		printf("The number of arguments is: %d\n", argcount_ - 1);
-	}
+	
+	printf("%d\n", argcount_ - 1);
 	return (0);
 }
