@@ -9,7 +9,7 @@
 int main(int argcount_, char *arg_values[])
 {
 	(void) arg_values; /*Ignore arg_values*/
-	
+
 	printf("%d\n", argcount_ - 1);
 	return (0);
 }
