@@ -10,29 +10,40 @@
  */
 int main(int arg_c, char *arg_v[])
 {
-	int namba, g, output;
-	int coins[] = {25, 10, 5, 2, 1};
+	int sents, coins = 0;
 
 	if (arg_c != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	namba = atoi(arg_v[1]);
-	output = 0;
-	if (namba < 0)
+	sents = atoi(arg_v[1]);
+
+	while (sents > 0)
 	{
-		printf("0\n");
-		return (0);
-	}
-	for (g = 0; g < 5 && namba >= 0; g++)
-	{
-		while (namba >= coins[g])
+		coins++;
+		if ((sents - 25) >= 0)
 		{
-			output++;
-			namba -= coins[g];
+			sents -= 25;
+			continue;
 		}
+		if ((sents - 10) >= 0)
+		{
+			sents -= 10;
+			continue;
+		}
+		if ((sents - 5) >= 0)
+		{
+			sents -= 5;
+			continue;
+		}
+		if ((sents - 2) >= 0)
+		{
+			sents -= 2;
+			continue;
+		}
+		sents--;
 	}
-	printf("%d\n", namba);
+	printf("%d\n", coins);
 	return (0);
 }
