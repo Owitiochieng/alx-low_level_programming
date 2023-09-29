@@ -8,13 +8,12 @@
  * struct listint_s - This is a singly linked list
  * @n: This is an input integer
  * @next: An input that points to the next node
- *
- * Description: singly linked list node structure 
+ * Description: singly linked list node structure
  */
 typedef struct listint_s
 {
- int n;
- struct listint_s *next;
+	int n;
+	struct listint_s *next;
 } listint_t;
 
 int _putchar(int c);
