@@ -265,6 +265,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
+	lseek(open_res, 0, SEEK_SET);
 	read_res = read(open_res, header, sizeof(Elf64_Ehdr));
 	if (read_res == -1)
 	{
