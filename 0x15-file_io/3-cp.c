@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 	error_file(origin, des, argv);
 
 	character_num = 1024;
-	while (characer_num == 1024)
+	while (character_num == 1024)
 	{
 		character_num = read(origin, strbuf, 1024);
 		if (character_num == -1)
