@@ -1,43 +1,32 @@
 #include "main.h"
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+
 /**
- * read_textfile - This function reads text file and writes it to POSIX
- * @filename: The file input to be read and printed to POSIX
- * @letters: The value that represents number of letters t be read and printed
- * Return: The number of read and printed letters
+ * read_textfile - This is a func that reads text file and displays the letters
+ * @filename: This input represents the filename
+ * @letters: This input represents the num of letters to be printed
+ * Return: numbers of letters printed otherwise return 0 upon failure
  */
-ssize_t read_textfile(const char *filename, size_t letters);
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int f_des;
 	ssize_t read_len, written_len;
-	char *strbuff;
+	char *strbuf;
 
-	if (filename == NULL)
+	if (!filename)
 		return (0);
+
 	f_des = open(filename, O_RDONLY);
+
 	if (f_des == -1)
 		return (0);
-	strbuff = malloc(sizeof(char) * letters);
-	if (strbuff == NULL)
-	{
-		close(f_des);
+
+	strbuf = malloc(sizeof(char) * (letters));
+	if (!strbuf)
 		return (0);
-	}
-	read_len = read(f_des, strbuff, letters);
+	read_len = read(f_des, strbuf, letters);
+	written_len = write(STDOUT_FILENO, strbuf, read_len);
 	close(f_des);
-	if (read_len == -1)
-	{
-		free(strbuff);
-		return (0);
-	}
-	written_len = write(STDOUT_FILENO, strbuff, read_len);
-	free(strbuff);
-	if (read_len != written_len)
-		return (0);
+	free(strbuf);
+	
 	return (written_len);
 }
-
